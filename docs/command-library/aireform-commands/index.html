@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AireForm commands | AireAssert Docs</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="AireForm commands" />
+<meta name="author" content="Rhianna Thwaite" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Setup Given we are completing the form-name eform version Loads the specified form into the browser ready for testing" />
+<meta property="og:description" content="Setup Given we are completing the form-name eform version Loads the specified form into the browser ready for testing" />
+<link rel="canonical" href="https://docs.aireassert.com/docs/command-library/aireform-commands/" />
+<meta property="og:url" content="https://docs.aireassert.com/docs/command-library/aireform-commands/" />
+<meta property="og:site_name" content="AireAssert Docs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-15T11:28:05+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AireForm commands" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-02-15T11:28:05+00:00","datePublished":"2023-02-15T11:28:05+00:00","description":"Setup Given we are completing the form-name eform version Loads the specified form into the browser ready for testing","headline":"AireForm commands","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/command-library/aireform-commands/"},"url":"https://docs.aireassert.com/docs/command-library/aireform-commands/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="https://docs.aireassert.com/assets/posts/"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png" >
+  <link rel="alternate" type="application/rss+xml" title="AireAssert Docs" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  
+</head>
+
+    <body>
+    <!-- 
+<nav class="siblings dark">
+	
+	<div class="nav-bar wrapper wrapper-large">
+		
+			<a  href="https://forms4health.com">Home</a>
+		
+			<a  href="https://docs.forms4health.com">Learn</a>
+		
+			<a  href="https://demo.forms4health.com">Demo</a>
+		
+		<span class="no-active-replacement"></span>
+	</div>
+</nav> -->
+    <header class="uk-background-secondary">
+    <div data-uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky" class="uk-sticky uk-sticky-fixed" style="position: fixed; top: 0px; width: 1904px;">
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+    <div data-uk-navbar>
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-item uk-logo uk-visible@m" href="/">AireAssert Docs</a>
+            
+              <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-navbar-toggle-icon data-uk-toggle></a>
+            
+
+        </div>
+        <div class="uk-navbar-center uk-hidden@m">
+            <a class="uk-navbar-item uk-logo" href="/">AireAssert Docs</a>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav uk-visible@m">
+                
+                    
+                    
+                    
+                        <li><a href="/news/" >News</a></li>
+                    
+                
+                    
+                    
+                    
+                        <li><a href="/docs/getting-started/where-do-i-start/" >Getting Started</a></li>
+                    
+                
+                    
+                    
+                    
+                        <li><a href="/changelog/" >Changelog</a></li>
+                    
+                
+                    
+                    
+                    
+                        <li><a href="https://www.airelogic.com/" target="_blank" >About Airelogic</a></li>
+                    
+                
+            </ul>
+
+            
+            <div>
+                <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                        <input id="navbar-search" class="uk-search-input" type="search" placeholder="Search..." autofocus>
+                    </form>
+                    <ul id="navbar-search-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                </div>
+            </div>
+            <script>
+            SimpleJekyllSearch({
+                searchInput: document.getElementById('navbar-search'),
+                resultsContainer: document.getElementById('navbar-search-results'),
+                noResultsText: '<li>No results found</li>',
+                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                json: '/search.json'
+            });
+            </script>
+            
+
+            
+              <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-navbar-toggle-icon data-uk-toggle></a>
+            
+
+
+        </div>
+    </div>
+</div>
+
+        </nav>
+    </div>
+</header>
+
+
+    
+
+    <div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" data-uk-grid>
+
+            <div class="sidebar-fixed-width uk-visible@m">
+                <div class="sidebar-docs uk-position-fixed">
+                    
+                    <h5>Getting Started</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getting-started/where-do-i-start/">Getting Started with AireAssert</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getting-started/running-testset/">Running a TestSet from the UI</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getting-started/managing-repos/">Managing Repositories</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getting-started/managing-users/">Managing Users</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Command Library</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class="uk-active"><a href="/docs/command-library/aireform-commands/">AireForm commands</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/command-library/aireglu-commands/">AireGlu commands</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/command-library/aireflow-commands/">AireFlow commands</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/command-library/tips-gherkin-testing/">Tips for Gherkin Testing in AireAssert</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Testset Configuration</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/testset-config/testset-config-resolution/">Browser Resolution</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/testset-config/testset-config-browser/">Browser Configuration</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
+                    
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-expand@m">
+
+                <article class="uk-article">
+
+                    <h1 class="uk-article-title">AireForm commands</h1>
+
+                    
+
+                    <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
+                        
+
+
+
+
+
+<time datetime="2023-02-15T11:28:05+00:00" itemprop="datePublished">
+    
+    Feb 15, 2023
+</time>
+
+                    </div>
+
+                    <div class="article-content">
+                        <h2 id="setup">Setup</h2>
+<p><strong>Given we are completing the form-name eform version</strong><br />
+Loads the specified form into the browser ready for testing</p>
+
+<p>Example: Given we are completing the iapt-leeds eform v7</p>
+
+<h2 id="standard-actions">Standard Actions</h2>
+<p>These are the commands you will use most often
+<strong>When we set ‘field-name’ to ‘new-value’</strong></p>
+
+<p>Will set the specified field to the new value. The way that we use this can vary between fields:</p>
+
+<ul>
+  <li>Textboxes/Freeform Inputs: The new value is typed into the field, replacing any existing text;</li>
+  <li>Radiobutton lists, select boxes: The option matching the new value is selected. An error is thrown if no option matches the new value;</li>
+  <li>Checkbox lists: The option(s) matching the new value(s) are selected. You can seperate multiple values with commas like <code class="language-plaintext highlighter-rouge">json WHEN we set 'mylist' to 'option1, option2'</code> An error is thrown if no option matches a new value; To un-select all options set the value to ‘’.</li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">When</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">set</span><span class="w"> </span><span class="err">field</span><span class="w"> </span><span class="err">values</span><span class="w">
+</span><span class="err">|</span><span class="w"> </span><span class="err">field-name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">new-value</span><span class="w"> </span><span class="err">|</span><span class="w">
+</span><span class="err">|</span><span class="w"> </span><span class="err">field-name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">new-value</span><span class="w"> </span><span class="err">|</span><span class="w">
+</span><span class="err">Sets</span><span class="w"> </span><span class="err">fields</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">values.</span><span class="w"> </span><span class="err">Behaves</span><span class="w"> </span><span class="err">just</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">'WHEN</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">set</span><span class="w"> </span><span class="err">'x'</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">'y''</span><span class="w"> </span><span class="err">but</span><span class="w"> </span><span class="err">easier</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">read</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">lots</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">fields.</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>When we set ‘field-name’ to anything</strong></p>
+
+<p>Sets the specified field to a random value. This is useful when a field requires a value but the value will not affect the outcome of the test, this makes clear which values you care about and which you just need completing.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">When</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">set</span><span class="w"> </span><span class="err">fields</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">anything</span><span class="w">
+</span><span class="err">|</span><span class="w"> </span><span class="err">field-name</span><span class="w"> </span><span class="err">|</span><span class="w">
+</span><span class="err">|</span><span class="w"> </span><span class="err">field-name</span><span class="w"> </span><span class="err">|</span><span class="w">
+</span><span class="err">Sets</span><span class="w"> </span><span class="err">fields</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">random</span><span class="w"> </span><span class="err">values.</span><span class="w"> </span><span class="err">Behaves</span><span class="w"> </span><span class="err">just</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">'WHEN</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">set</span><span class="w"> </span><span class="err">'x'</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">anything'</span><span class="w"> </span><span class="err">but</span><span class="w"> </span><span class="err">easier</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">read</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">lots</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">fields.</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>When we do not provide a value to ‘field-name’</strong>
+Clears the specified field.</p>
+
+<p><strong>When we move to the next page of the form</strong>
+Moves to the next page of the form.</p>
+
+<p><strong>When we submit the form</strong>
+Submits the final page of a form.</p>
+
+<h2 id="assertions">Assertions</h2>
+<p>Once you have interacted with a form, you will want to verify it has reacted as expected.</p>
+
+<p><strong>Then the form submits successfully</strong>
+Checks that no issues were found when the form submits.</p>
+
+<p><strong>Then page page-name is shown</strong>
+Checks that the specified page is on-screen.</p>
+
+<p><strong>Then ‘field-name’ shows ‘expected-value’</strong>
+Checks that the specified value is shown in a field. The way that we use this can vary between fields:</p>
+
+<ul>
+  <li>Textboxes/Freeform Inputs: The value is checked against the contents of the input;</li>
+  <li>Radiobutton lists, select boxes: the value is checked against the label of the selected item;</li>
+  <li>Checkbox lists: the value is checked against all the selected checkboxes, in order. Seperate items with a comma: ``THEN ‘MyField’ shows ‘Option1, Option3’.</li>
+</ul>
+
+<p><strong>Then ‘field-name’ is greater than ‘expected-value’</strong>
+Checks that the value in the field is greater than the expected value</p>
+
+<p><strong>Then ‘field-name’ is empty</strong>
+Checks that the specified field does not have a value</p>
+
+<p><strong>Then ‘field-name’ is not empty</strong>
+Checks that the specified field does have a value</p>
+
+<p><strong>Then ‘field-name’ does not have a validation message</strong>
+Checks that the specified field does not have a validation error visible.</p>
+
+<p><strong>Then ‘field-name’ has a validation message</strong>
+<strong>Then ‘field-name’ has a validation message ‘expected message’</strong>
+Checks that the specified field has a validation error visible. If specified, the message will be checked against the expected mesage.</p>
+
+<p><strong>Then ‘field-name’ is visible</strong>
+<strong>Then ‘field-name’ is not visible</strong>
+Checks that the specified field is or is not shown on the page.</p>
+
+<p><strong>Then the ‘section-name’ form section is visible</strong>
+<strong>Then the ‘section-name’ form section is not visible</strong>
+Checks that the specified form section is or is not visible</p>
+
+<p><strong>Then ‘field-name’ is enabled</strong>
+<strong>Then ‘field-name’ is disabled</strong>
+Checks that the specified field is enabled or not</p>
+
+<p><strong>Then ‘field-name’ has an ‘Other’ input visible</strong>
+<strong>Then ‘field-name’ does not have an ‘Other’ input visible</strong>
+Certain fields, such as drop-down selects or similar may have the option for an ‘Other’ textbox, this asserts that this is or is not shown
+<img src="/assets/img/AireForm-commands/aireform-commands-1.png" alt="aireform-commands" /></p>
+
+<p><strong>Then a validation error shows</strong>
+<strong>Then a validation error shows ‘expected message’</strong>
+Checks that a validation message is shown in the popup at the bottom of the screen. If specified the expected message is checked, if not only the appearance of the popup is validated.</p>
+
+<h2 id="controls-with-other-options">Controls with ‘Other’ options</h2>
+<p>Sometimes a dropdown list or a radio button list can have an ‘Other’ option which then allows freeform input into a textbox. You can interact with this with the following:</p>
+
+<p><strong>When we set the ‘Other’ input of ‘field-name’ to ‘new-value’</strong>
+If the other textbox is visible it will be filled in, if not an error will be thrown.</p>
+
+<p><strong>Then ‘field-name’ has an ‘Other’ input visible</strong>
+Checks that the specified field has its Other textbox visible.</p>
+
+<p><strong>Then the ‘Other’ input of ‘field-name’ shows ‘expected-value’</strong>
+Checks that the contents of the field’s Other textbox matches the expected value. If the Other textbox is not visible the value is considered to be an empty string.</p>
+
+<h2 id="working-with-repeaters">Working with Repeaters</h2>
+<p>Things can be slightly more complex when working with repeaters, where you will have to specify the row that you want to look within when using assertions.</p>
+
+<p><strong>When we set ‘field-name’ in row row-no of ‘repeater-name’ to ‘new-value’</strong>
+This will set the new value into the specified field of the repeater. The row number is 1-based</p>
+
+<p><strong>When we add a new row to ‘repeater-name’</strong>
+Clicks the add new row button of the specified repeater. You must do this before interacting with the new row!</p>
+
+<p><strong>Then ‘field-name’ in row row-no of ‘repeater-name’ shows ‘expected-value’</strong>
+Checks that the field in the specified row of the repeater matches the expected value</p>
+
+<p><strong>Then ‘field-name’ is visible in row row-no of ‘repeater-name’</strong>
+Checks that the field in the specified row of the repeater is visible</p>
+
+<p><strong>Then ‘repeater-name’ has (\d+) repetitions</strong>
+Checks that the repeater has the correct number of repetitions (rows).</p>
+
+                        <div class="share uk-text-center">
+    <a href="https://twitter.com/intent/tweet?text=AireForm commands&url=https://docs.aireassert.com/docs/command-library/aireform-commands/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireassert.com%2Fdocs%2Fcommand-library%2Faireform-commands%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+</div>
+
+                    </div>
+
+                    <hr class="uk-margin-medium">
+
+                    
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="uk-pagination uk-margin-top">
+          
+            
+            
+            <li><a class="hvr-back" href="/docs/getting-started/managing-users/">&larr; Previous</a></li>
+          
+          
+            
+            
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/command-library/aireglu-commands/">Next &rarr;</a></li>
+          
+    </ul>
+    
+
+
+                    <div class="uk-margin-large-top">
+    <h3>Related Articles</h3>
+
+    
+    
+    
+
+    <ul class="uk-list">
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+    </ul>
+</div>
+
+
+                    
+                </article>
+
+                <div>
+                    <div class="uk-section uk-text-center uk-link-muted">
+    <div class="uk-margin-medium uk-text-small">
+        <div></div>
+        <div></div> 
+    </div> 
+</div>
+
+                </div>
+
+                <script>
+                    // Table of contents scroll to
+                    UIkit.scroll('#markdown-toc a', {
+                        duration: 400,
+                        offset: 120
+                    });
+                </script>
+
+            </div>
+
+    </div>
+</div>
+
+
+    <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+        <h5 class="uk-margin-top">Getting Started</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/getting-started/where-do-i-start/">Getting Started with AireAssert</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getting-started/running-testset/">Running a TestSet from the UI</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getting-started/managing-repos/">Managing Repositories</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getting-started/managing-users/">Managing Users</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Command Library</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class="uk-active"><a href="/docs/command-library/aireform-commands/">AireForm commands</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/command-library/aireglu-commands/">AireGlu commands</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/command-library/aireflow-commands/">AireFlow commands</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/command-library/tips-gherkin-testing/">Tips for Gherkin Testing in AireAssert</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Testset Configuration</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/testset-config/testset-config-resolution/">Browser Resolution</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/testset-config/testset-config-browser/">Browser Configuration</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
+        
+        </ul>
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        <ul class="uk-nav uk-nav-default">
+            <li><a class="uk-logo uk-margin-small-bottom" href="/">AireAssert Docs</a></li>
+            
+                
+            <li><a href="https://docs.aireassert.com/news/" >News</a></li>
+            
+                
+            <li><a href="https://docs.aireassert.com/docs/getting-started/where-do-i-start/" >Getting Started</a></li>
+            
+                
+            <li><a href="https://docs.aireassert.com/changelog/" >Changelog</a></li>
+            
+                
+            <li><a href="https://www.airelogic.com/" target="_blank" >About Airelogic</a></li>
+            
+        </ul>
+
+        <div class="uk-margin-small-top uk-text-center uk-text-muted uk-link-muted">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+    </body>
+
+</html>
