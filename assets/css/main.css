@@ -1138,7 +1138,7 @@ select.uk-form-width-xsmall { width: 75px; }
 
 .uk-article blockquote { border-left: solid 2px #7a838a; padding-left: 20px; line-height: 1.7; margin-top: 40px; margin-bottom: 40px; }
 
-.uk-article .highlight, .uk-article .highlighter-rouge { margin-top: 40px; margin-bottom: 40px; }
+.uk-article .highlight, .uk-article .highlighter-rouge { margin-top: 10px; margin-bottom: 10px; }
 
 /* Micro clearfix */
 .uk-article::before, .uk-article::after { content: ""; display: table; }
@@ -3035,5 +3035,11 @@ footer .uk-subnav > .uk-active > a { color: #7a838a; }
 .highlight .il { color: #E56134; }
 
 .article-content h1::before, .article-content h2::before, .article-content h3::before, .article-content h4::before, .article-content h5::before, .article-content h6::before { display: block; content: " "; margin-top: -100px; height: 100px; visibility: hidden; pointer-events: none; }
+
+table.styled { width: 100%; max-width: 100%; border-collapse: collapse; border-style: hidden; }
+
+table.styled td { padding: 0.8rem; border: 1px solid #e7e8e9; }
+
+table.styled th { padding: 0.8rem; border: 1px solid #dddddd; background: fixed #e7e8e9; }
 
 /*# sourceMappingURL=main.css.map */

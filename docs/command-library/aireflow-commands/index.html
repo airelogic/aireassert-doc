@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://docs.aireassert.com/docs/command-library/aireflow-commands/" />
 <meta property="og:site_name" content="AireAssert Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-04-18T11:33:46+00:00" />
+<meta property="article:published_time" content="2023-07-25T15:41:11+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="AireFlow commands" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-04-18T11:33:46+00:00","datePublished":"2023-04-18T11:33:46+00:00","description":"Setting up a TestSet to connect to AireFlow The first step in testing an AireFlow process is telling the TestSet about the target instance. You can do this in the Configuration.json file by adding an AireFlow section:","headline":"AireFlow commands","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/command-library/aireflow-commands/"},"url":"https://docs.aireassert.com/docs/command-library/aireflow-commands/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-07-25T15:41:11+00:00","datePublished":"2023-07-25T15:41:11+00:00","description":"Setting up a TestSet to connect to AireFlow The first step in testing an AireFlow process is telling the TestSet about the target instance. You can do this in the Configuration.json file by adding an AireFlow section:","headline":"AireFlow commands","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/command-library/aireflow-commands/"},"url":"https://docs.aireassert.com/docs/command-library/aireflow-commands/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireassert.com/assets/posts/"/>
@@ -171,9 +171,18 @@
                       
                       <li class="uk-active"><a href="/docs/command-library/aireflow-commands/">AireFlow commands</a></li>
                     
+                    </ul>
+                    
+                    <h5>Advanced Topics</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
                       
                       
-                      <li class=""><a href="/docs/command-library/tips-gherkin-testing/">Tips for Gherkin Testing in AireAssert</a></li>
+                      <li class=""><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
                     
                     </ul>
                     
@@ -212,9 +221,9 @@
 
 
 
-<time datetime="2023-04-18T11:33:46+00:00" itemprop="datePublished">
+<time datetime="2023-07-25T15:41:11+00:00" itemprop="datePublished">
     
-    Apr 18, 2023
+    Jul 25, 2023
 </time>
 
                     </div>
@@ -275,8 +284,8 @@
 
 <p>If you do not have a form to trigger with, but you know the CorrelationId of your flow you can set this up with a GIVEN step:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">GIVEN</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">Correlation</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Given </span>a Correlation ID of 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+</code></pre></div></div>
 
 <h2 id="triggering-a-flow">Triggering a Flow</h2>
 <p>For information on how to setup a trigger on AireFlow, please see the <a href="https://docs.aireflow.co.uk/">AireFlow Documentation</a> site <br /></p>
@@ -289,17 +298,17 @@
 
 <p>Your payloads can be templateable. In your XML use the –<em>TOKENNAME</em>– format to show where data can be passed in, e.g.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&lt;myparent&gt;</span><span class="w">
-  </span><span class="err">&lt;mynode&gt;--*some-token*--&lt;/mynode&gt;</span><span class="w">
-</span><span class="err">&lt;/myparent&gt;</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;myparent&gt;</span>
+  <span class="nt">&lt;mynode&gt;</span>--*some-token*--<span class="nt">&lt;/mynode&gt;</span>
+<span class="nt">&lt;/myparent&gt;</span>
+</code></pre></div></div>
 
 <p>Now we are ready to trigger the flow:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">WHEN</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">trigger</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">event</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">payload</span><span class="w"> </span><span class="err">'xxx'</span><span class="w">
-</span><span class="err">|</span><span class="w"> </span><span class="err">some-token</span><span class="w">       </span><span class="err">|</span><span class="w"> </span><span class="err">Value</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">inject</span><span class="w"> </span><span class="err">into</span><span class="w"> </span><span class="err">XML</span><span class="w"> </span><span class="err">|</span><span class="w">
-</span><span class="err">|</span><span class="w"> </span><span class="err">some-other-token</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">Some</span><span class="w"> </span><span class="err">other</span><span class="w"> </span><span class="err">value</span><span class="w">         </span><span class="err">|</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we trigger aireflow event 'xxx' with payload 'xxx'
+<span class="p">|</span> <span class="nv">some-token</span>       <span class="p">|</span> <span class="nv">Value</span> <span class="nv">to</span> <span class="nv">inject</span> <span class="nv">into</span> <span class="nv">XML</span> <span class="p">|</span>
+<span class="p">|</span> <span class="n">some-other-token</span> <span class="p">|</span> <span class="n">Some</span> <span class="n">other</span> <span class="n">value</span>         <span class="p">|</span>
+</code></pre></div></div>
 
 <p>The command succeeds if AireFlow accepts the trigger.</p>
 
@@ -313,52 +322,52 @@
 <h2 id="asserting-a-task-has-been-run">Asserting a task has been run</h2>
 <p>We can confirm that a task has been run:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">THEN</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">been</span><span class="w"> </span><span class="err">run</span><span class="w">
-</span><span class="err">THEN</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">been</span><span class="w"> </span><span class="err">run</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">x</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>aireflow task 'xxx' has been run
+<span class="nf">Then </span>aireflow task 'xxx' has been run within x seconds
+</code></pre></div></div>
 
 <h2 id="checking-the-status-of-a-task">Checking the status of a task</h2>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Then</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">status</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">'xxx'</span><span class="w">
-</span><span class="err">Then</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">status</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">x</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>aireflow task 'xxx' has status of 'xxx'
+<span class="nf">Then </span>aireflow task 'xxx' has status of 'xxx' within x seconds
+</code></pre></div></div>
 
 <h2 id="aireflow-state-assertions">AireFlow State Assertions</h2>
 <p>Each AireFlow task can have State assigned, this is a set of key/value pairs which you can see in the API definition</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">THEN</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">state</span><span class="w">
-</span><span class="err">THEN</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">state</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">x</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>aireflow task 'xxx' has state
+<span class="nf">Then </span>aireflow task 'xxx' has state within x seconds
+</code></pre></div></div>
 
 <p>Verifies that the specified task has some state assigned, either now or within the timeout period specified.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">state</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">'xxx'</span><span class="w">
-</span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">state</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">x</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>aireflow task 'xx' has state 'xxx' of 'xxx'
+<span class="nf">Then </span>aireflow task 'xx' has state 'xxx' of 'xxx' within x seconds
+</code></pre></div></div>
 
 <p>Verifies that the specified State value exists on a task, either now or within the timeout period specified.</p>
 
 <h2 id="aireflow-property-assertions">AireFlow Property Assertions</h2>
 <p>A property is any of the basic properties available under ‘ActivityContext’ in the API Definition</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">properties</span><span class="w">
-</span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">properties</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">x</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>aireflow task 'xx' has properties
+<span class="nf">Then </span>aireflow task 'xx' has properties within x seconds
+</code></pre></div></div>
 
 <p>Verifies that the task has properties, either now or within the timeout period specified.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">'xx'</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">'xx'</span><span class="w">
-</span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">'xx'</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">'xx'</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">x</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>aireflow task 'xx' has property 'xx' of 'xx'
+<span class="nf">Then </span>aireflow task 'xx' has property 'xx' of 'xx' within x seconds
+</code></pre></div></div>
 
 <p>Verifies that the specified Property value exists on a task, either now or within the timeout period specified.</p>
 
 <h2 id="verifying-a-tasks-name">Verifying a tasks name</h2>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">THEN</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">'xxx'</span><span class="w">
-</span><span class="err">THEN</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">x</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>aireflow task 'xxx' has name 'xxx'
+<span class="nf">Then </span>aireflow task 'xxx' has name 'xxx' within x seconds
+</code></pre></div></div>
 
 <h2 id="verifying-a-tasks-description">Verifying a tasks description</h2>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">THEN</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">'xxx'</span><span class="w">
-</span><span class="err">THEN</span><span class="w"> </span><span class="err">aireflow</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">x</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>aireflow task 'xxx' has description 'xxx'
+<span class="nf">Then </span>aireflow task 'xxx' has description 'xxx' within x seconds
+</code></pre></div></div>
 
                         <div class="share uk-text-center">
     <a href="https://twitter.com/intent/tweet?text=AireFlow commands&url=https://docs.aireassert.com/docs/command-library/aireflow-commands/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
@@ -401,7 +410,7 @@
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/command-library/tips-gherkin-testing/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/advanced-topics/rules-and-logic/">Next &rarr;</a></li>
           
     </ul>
     
@@ -415,6 +424,15 @@
     
 
     <ul class="uk-list">
+    
+
+    
+    
+
+    
+
+    
+
     
 
     
@@ -597,9 +615,18 @@
           
           <li class="uk-active"><a href="/docs/command-library/aireflow-commands/">AireFlow commands</a></li>
         
+        </ul>
+        
+        <h5 class="uk-margin-top">Advanced Topics</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
           
           
-          <li class=""><a href="/docs/command-library/tips-gherkin-testing/">Tips for Gherkin Testing in AireAssert</a></li>
+          <li class=""><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
         
         </ul>
         

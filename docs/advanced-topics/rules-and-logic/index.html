@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>RunConfiguration | AireAssert Docs</title>
+<title>Rules and logic | AireAssert Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="RunConfiguration" />
+<meta property="og:title" content="Rules and logic" />
 <meta name="author" content="Rhianna Thwaite" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A testset may define a collection of Run Configurations. These are sets of configuration that work well together, that you wish to be able to switch between easily." />
-<meta property="og:description" content="A testset may define a collection of Run Configurations. These are sets of configuration that work well together, that you wish to be able to switch between easily." />
-<link rel="canonical" href="https://docs.aireassert.com/docs/testset-config/testset-config-run/" />
-<meta property="og:url" content="https://docs.aireassert.com/docs/testset-config/testset-config-run/" />
+<meta name="description" content="Form control names When testing a feature file in AireAssert there are a few things to look out for, certain symbols can not be used and will result in a test failure. The symbols which can not be used in a feature file include questions marks (?) and apostrophes (‘)." />
+<meta property="og:description" content="Form control names When testing a feature file in AireAssert there are a few things to look out for, certain symbols can not be used and will result in a test failure. The symbols which can not be used in a feature file include questions marks (?) and apostrophes (‘)." />
+<link rel="canonical" href="https://docs.aireassert.com/docs/advanced-topics/rules-and-logic/" />
+<meta property="og:url" content="https://docs.aireassert.com/docs/advanced-topics/rules-and-logic/" />
 <meta property="og:site_name" content="AireAssert Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-07-25T15:41:11+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="RunConfiguration" />
+<meta property="twitter:title" content="Rules and logic" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-07-25T15:41:11+00:00","datePublished":"2023-07-25T15:41:11+00:00","description":"A testset may define a collection of Run Configurations. These are sets of configuration that work well together, that you wish to be able to switch between easily.","headline":"RunConfiguration","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/testset-config/testset-config-run/"},"url":"https://docs.aireassert.com/docs/testset-config/testset-config-run/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-07-25T15:41:11+00:00","datePublished":"2023-07-25T15:41:11+00:00","description":"Form control names When testing a feature file in AireAssert there are a few things to look out for, certain symbols can not be used and will result in a test failure. The symbols which can not be used in a feature file include questions marks (?) and apostrophes (‘).","headline":"Rules and logic","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/advanced-topics/rules-and-logic/"},"url":"https://docs.aireassert.com/docs/advanced-topics/rules-and-logic/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireassert.com/assets/posts/"/>
@@ -178,7 +178,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
+                      <li class="uk-active"><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
                     
                       
                       
@@ -199,7 +199,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
+                      <li class=""><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
                     
                     </ul>
                     
@@ -210,7 +210,7 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">RunConfiguration</h1>
+                    <h1 class="uk-article-title">Rules and logic</h1>
 
                     
 
@@ -229,39 +229,43 @@
                     </div>
 
                     <div class="article-content">
-                        <p>A testset may define a collection of Run Configurations. These are sets of configuration that work well together, that you wish to be able to switch between easily.</p>
+                        <h3 id="form-control-names">Form control names</h3>
+<p>When testing a feature file in AireAssert there are a few things to look out for, certain symbols can not be used and will result in a test failure. The symbols which can not be used in a feature file include questions marks (?) and apostrophes (‘).</p>
 
-<h2 id="show-me">Show me</h2>
-<p>In the root of your TestSet, next to the Configuration.json file create a new file RunConfiguration.json:</p>
+<p>When testing a form in AireAssert, there may be question marks in the form but should not be used in the gherkin testing .feature file as this will result in a failure for example,</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"ActiveConfiguration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RunConfigurations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"BrowserResolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400x400"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"BrowserResolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000x300"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Complete Form 
+<span class="nf">Given </span>we are completing the testing eform 
+<span class="nf">When </span>we set 'Testing?' to 'Yes' 
+<span class="nf">Then </span>'control-1' is not empty
+</code></pre></div></div>
 
-<p>If you now run your TestSet, you should see that every test runs with a browser resolution of 400 x 400.</p>
+<p><img src="/assets/img/Gherkin-testing/tips-gherkin-testing-1.png" alt="tips-gherkin-testing" /></p>
 
-<h2 id="choosing-the-target-configuration">Choosing the target configuration</h2>
-<p>In the example above, we have 2 sets of configuration, so how do we switch between them?</p>
+<p>In order for this test to pass the Scenario should be written as seen below,</p>
 
-<p>We can set the default configuration by changing the ActiveConfiguration value in the RunConfiguration.json file:</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Complete Form 
+<span class="nf">Given </span>we are completing the testing eform 
+<span class="nf">When </span>we set 'Testing' to 'Yes'
+<span class="nf">Then </span>'control-1' is not empty
+</code></pre></div></div>
+<p>This process is the same for apostrophes, all other characters and symbols are okay to be used in the feature file as normal. Such as,</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"ActiveConfiguration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second"</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Complete Form 
+<span class="nf">Given </span>we are completing the testing eform 
+<span class="nf">When </span>we set 'Testing!' to 'Yes' 
+<span class="nf">Then </span>'control-1' is not empty
+</code></pre></div></div>
+
+<p>Another option is to use the building block and control name to reference the a control:</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we set 'building-block-name-control-name' to 'Yes'
+</code></pre></div></div>
+
+<p><img src="/assets/img/Gherkin-testing/tips-gherkin-testing-2.png" alt="tips-gherkin-testing" /></p>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=RunConfiguration&url=https://docs.aireassert.com/docs/testset-config/testset-config-run/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireassert.com%2Fdocs%2Ftestset-config%2Ftestset-config-run%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Rules and logic&url=https://docs.aireassert.com/docs/advanced-topics/rules-and-logic/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireassert.com%2Fdocs%2Fadvanced-topics%2Frules-and-logic%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -294,26 +298,16 @@
 
   
   
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/testset-config/testset-config-browser/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/command-library/aireflow-commands/">&larr; Previous</a></li>
           
           
-
+            
+            
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/advanced-topics/data-generation/">Next &rarr;</a></li>
           
     </ul>
     
@@ -525,7 +519,7 @@
         
           
           
-          <li class=""><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
+          <li class="uk-active"><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
         
           
           
@@ -546,7 +540,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
+          <li class=""><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
         
         </ul>
         

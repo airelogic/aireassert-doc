@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://docs.aireassert.com/docs/command-library/aireglu-commands/" />
 <meta property="og:site_name" content="AireAssert Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-04-18T11:33:46+00:00" />
+<meta property="article:published_time" content="2023-07-25T15:41:11+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="AireGlu commands" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-04-18T11:33:46+00:00","datePublished":"2023-04-18T11:33:46+00:00","description":"Setting up a TestSet to connect to AireFlow To begin testing an AireGlu endpoint, you will need to set this up in the TestSet Configuration.json file by adding an AireGlu section: { &quot;AireGlu&quot;: { &quot;Tenancy&quot;: &quot;my-tenancy&quot;, &quot;RuntimeUrl&quot;: &quot;https://admin.my.aireglu.com&quot;, &quot;ApiUrl&quot;: &quot;https://api.my.aireglu.com&quot;, &quot;RecentTimespanMinutes&quot;: 5 } }","headline":"AireGlu commands","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/command-library/aireglu-commands/"},"url":"https://docs.aireassert.com/docs/command-library/aireglu-commands/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-07-25T15:41:11+00:00","datePublished":"2023-07-25T15:41:11+00:00","description":"Setting up a TestSet to connect to AireFlow To begin testing an AireGlu endpoint, you will need to set this up in the TestSet Configuration.json file by adding an AireGlu section: { &quot;AireGlu&quot;: { &quot;Tenancy&quot;: &quot;my-tenancy&quot;, &quot;RuntimeUrl&quot;: &quot;https://admin.my.aireglu.com&quot;, &quot;ApiUrl&quot;: &quot;https://api.my.aireglu.com&quot;, &quot;RecentTimespanMinutes&quot;: 5 } }","headline":"AireGlu commands","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/command-library/aireglu-commands/"},"url":"https://docs.aireassert.com/docs/command-library/aireglu-commands/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireassert.com/assets/posts/"/>
@@ -171,9 +171,18 @@
                       
                       <li class=""><a href="/docs/command-library/aireflow-commands/">AireFlow commands</a></li>
                     
+                    </ul>
+                    
+                    <h5>Advanced Topics</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
                       
                       
-                      <li class=""><a href="/docs/command-library/tips-gherkin-testing/">Tips for Gherkin Testing in AireAssert</a></li>
+                      <li class=""><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
                     
                     </ul>
                     
@@ -212,9 +221,9 @@
 
 
 
-<time datetime="2023-04-18T11:33:46+00:00" itemprop="datePublished">
+<time datetime="2023-07-25T15:41:11+00:00" itemprop="datePublished">
     
-    Apr 18, 2023
+    Jul 25, 2023
 </time>
 
                     </div>
@@ -273,29 +282,30 @@
 <p>The filenames excluding the file extension must be unique.</p>
 
 <p>Now we are ready to invoke the endpoint. In the example below we are invoking an AireGlu endpoint with the endpoint name of <strong>‘test-endpoint’</strong> and sending the payload <strong>payload-1</strong> (do not include the file extension).</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">When</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">invoke</span><span class="w"> </span><span class="err">endpoint</span><span class="w"> </span><span class="err">'test-endpoint'</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">payload</span><span class="w"> </span><span class="err">'payload</span><span class="mi">-1</span><span class="err">'</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we invoke endpoint 'test-endpoint' with payload 'payload-1'
+</code></pre></div></div>
 <p>This will pass if AireGlu returns a</p>
 
 <h2 id="payload-templates">Payload Templates</h2>
 <p>Your payloads can be templatable. In your payload, use the –*TOKENNAME*– format to show where data can be passed in. For example:</p>
 
 <p><strong>payload-2.xml</strong></p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&lt;agent&gt;</span><span class="w">
-  </span><span class="err">&lt;id&gt;--*Id*--&lt;/id&gt;</span><span class="w">
-  </span><span class="err">&lt;name&gt;--*Name*--&lt;/name&gt;</span><span class="w">
-</span><span class="err">&lt;/agent&gt;</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;agent&gt;</span>
+  <span class="nt">&lt;id&gt;</span>--*Id*--<span class="nt">&lt;/id&gt;</span>
+  <span class="nt">&lt;name&gt;</span>--*Name*--<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;/agent&gt;</span>
+</code></pre></div></div>
 <p>The payloads can be overloaded in the .feature file:</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">When</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">invoke</span><span class="w"> </span><span class="err">endpoint</span><span class="w"> </span><span class="err">'test-endpoint'</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">payload</span><span class="w"> </span><span class="err">'payload</span><span class="mi">-2</span><span class="err">'</span><span class="w">
-	</span><span class="err">|</span><span class="w"> </span><span class="err">Id</span><span class="w">		</span><span class="err">|</span><span class="w"> </span><span class="mi">123</span><span class="w">		</span><span class="err">|</span><span class="w">
-	</span><span class="err">|</span><span class="w"> </span><span class="err">Name</span><span class="w">		</span><span class="err">|</span><span class="w"> </span><span class="err">John</span><span class="w"> </span><span class="err">Doe</span><span class="w">	</span><span class="err">|</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we invoke endpoint 'test-endpoint' with payload 'payload-2'
+	<span class="p">|</span> <span class="nv">Id</span>		<span class="p">|</span> <span class="nv">123</span>		<span class="p">|</span>
+	<span class="p">|</span> <span class="n">Name</span>		<span class="p">|</span> <span class="n">John</span> <span class="n">Doe</span>	<span class="p">|</span>
+</code></pre></div></div>
 
 <h2 id="test-an-existing-endpoint-invocation">Test an existing endpoint invocation</h2>
 <p>If you know the transaction Id, you can also test an existing endpoint invocation with the following command:</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Given</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">executed</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">endpoint</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">transaction</span><span class="w"> </span><span class="err">'xxx'</span><span class="w"> </span><span class="err">at</span><span class="w"> </span><span class="err">'</span><span class="mi">2023-01-01</span><span class="err">T</span><span class="mi">12</span><span class="err">:</span><span class="mi">00</span><span class="err">:</span><span class="mi">0</span><span class="mf">0.000</span><span class="err">Z'</span><span class="w">
-</span></code></pre></div></div>
+
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Given we executed an endpoint with transaction 'xxx' at '2023-01-01T12</span><span class="p">:</span><span class="err">00</span><span class="p">:</span><span class="err">00.000Z'</span>
+</code></pre></div></div>
 
 <h2 id="endpoint-structure">Endpoint Structure</h2>
 <p>When talking about endpoints it is useful to understand how an endpoint is structured. It will have this format:</p>
@@ -350,27 +360,27 @@
 
 <h2 id="commands">Commands</h2>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">THEN</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">aireglu</span><span class="w"> </span><span class="err">endpoint</span><span class="w"> </span><span class="err">'*endpoint*'</span><span class="w"> </span><span class="err">logs</span><span class="w"> </span><span class="err">action</span><span class="w"> </span><span class="err">'*action-name*'</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">*seconds*</span><span class="w"> </span><span class="err">seconds</span><span class="w">  
-</span><span class="err">THEN</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">aireglu</span><span class="w"> </span><span class="err">endpoint</span><span class="w"> </span><span class="err">'*endpoint*'</span><span class="w"> </span><span class="err">logs</span><span class="w"> </span><span class="err">actions</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">*seconds*</span><span class="w"> </span><span class="err">seconds</span><span class="w">  
-	</span><span class="err">|</span><span class="w"> </span><span class="err">*action-name*</span><span class="w"> </span><span class="err">|</span><span class="w">  
-	</span><span class="err">|</span><span class="w"> </span><span class="err">*action-name*</span><span class="w"> </span><span class="err">|</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>the aireglu endpoint '*endpoint*' logs action '*action-name*' within *seconds* seconds  
+<span class="nf">Then </span>the aireglu endpoint '*endpoint*' logs actions within *seconds* seconds  
+	<span class="p">|</span> <span class="nv">*action-name*</span> <span class="p">|</span>  
+	<span class="p">|</span> <span class="n">*action-name*</span> <span class="p">|</span>
+</code></pre></div></div>
 <p>Checks that the specified endpoint has executed tasks with matching action names within the given timeframe.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">THEN</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">aireglu</span><span class="w"> </span><span class="err">endpoint</span><span class="w"> </span><span class="err">'*endpoint*'</span><span class="w"> </span><span class="err">does</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">log</span><span class="w"> </span><span class="err">action</span><span class="w"> </span><span class="err">'*action-name*'</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">*seconds*</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>the aireglu endpoint '*endpoint*' does not log action '*action-name*' within *seconds* seconds
+</code></pre></div></div>
 <p>Checks that the specified endpoint has not executed a task with a matching action name within the given timeframe. Be careful with this assertion - as it has to wait the entire length of time you specify before the assertion passes it can seriously slow down your tests. Use only when really necessary!</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">THEN</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">'*task-label*'</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">aireglu</span><span class="w"> </span><span class="err">endpoint</span><span class="w"> </span><span class="err">'*endpoint*'</span><span class="w"> </span><span class="err">succeeds</span><span class="w"> </span><span class="err">within</span><span class="w"> </span><span class="err">*seconds*</span><span class="w"> </span><span class="err">seconds</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>the '*task-label*' task of aireglu endpoint '*endpoint*' succeeds within *seconds* seconds
+</code></pre></div></div>
 <p>Checks that a task with a matching label has been executed within the given timeframe. This will also set the matching task as the <strong>current task</strong> - which means that the following assertions will match against it’s debug data.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">THEN</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">sends</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">valid</span><span class="w"> </span><span class="err">format</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>the task sends data in a valid format
+</code></pre></div></div>
 <p>Checks that the <strong>current task</strong> has submitted its data in a format matching the template in your tests AireGlu Config (todo: link). This template will need to be defined before you can run this assertion!</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">THEN</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">task</span><span class="w"> </span><span class="err">sets</span><span class="w"> </span><span class="err">'*task-variable*'</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">'*expected-value*'</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>the task sets '*task-variable*' to '*expected-value*'
+</code></pre></div></div>
 <p>Checks that the <strong>current task’s</strong> submitted data contains the expected variable. This requires a template for the AireGlu task to be defined in config (todo: link) before you can run the assertion.</p>
 
                         <div class="share uk-text-center">
@@ -425,6 +435,15 @@
     
 
     <ul class="uk-list">
+    
+
+    
+    
+
+    
+
+    
+
     
 
     
@@ -607,9 +626,18 @@
           
           <li class=""><a href="/docs/command-library/aireflow-commands/">AireFlow commands</a></li>
         
+        </ul>
+        
+        <h5 class="uk-margin-top">Advanced Topics</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
           
           
-          <li class=""><a href="/docs/command-library/tips-gherkin-testing/">Tips for Gherkin Testing in AireAssert</a></li>
+          <li class=""><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
         
         </ul>
         

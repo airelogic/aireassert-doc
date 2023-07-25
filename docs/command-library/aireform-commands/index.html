@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://docs.aireassert.com/docs/command-library/aireform-commands/" />
 <meta property="og:site_name" content="AireAssert Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-04-18T11:33:46+00:00" />
+<meta property="article:published_time" content="2023-07-25T15:41:11+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="AireForm commands" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-04-18T11:33:46+00:00","datePublished":"2023-04-18T11:33:46+00:00","description":"Setup Given we are completing the form-name eform version Loads the specified form into the browser ready for testing","headline":"AireForm commands","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/command-library/aireform-commands/"},"url":"https://docs.aireassert.com/docs/command-library/aireform-commands/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-07-25T15:41:11+00:00","datePublished":"2023-07-25T15:41:11+00:00","description":"Setup Given we are completing the form-name eform version Loads the specified form into the browser ready for testing","headline":"AireForm commands","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/command-library/aireform-commands/"},"url":"https://docs.aireassert.com/docs/command-library/aireform-commands/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireassert.com/assets/posts/"/>
@@ -171,9 +171,18 @@
                       
                       <li class=""><a href="/docs/command-library/aireflow-commands/">AireFlow commands</a></li>
                     
+                    </ul>
+                    
+                    <h5>Advanced Topics</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
                       
                       
-                      <li class=""><a href="/docs/command-library/tips-gherkin-testing/">Tips for Gherkin Testing in AireAssert</a></li>
+                      <li class=""><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
                     
                     </ul>
                     
@@ -212,23 +221,25 @@
 
 
 
-<time datetime="2023-04-18T11:33:46+00:00" itemprop="datePublished">
+<time datetime="2023-07-25T15:41:11+00:00" itemprop="datePublished">
     
-    Apr 18, 2023
+    Jul 25, 2023
 </time>
 
                     </div>
 
                     <div class="article-content">
                         <h2 id="setup">Setup</h2>
-<p><strong>Given we are completing the form-name eform version</strong><br />
-Loads the specified form into the browser ready for testing</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Given </span>we are completing the form-name eform version
+</code></pre></div></div>
+<p>Loads the specified form into the browser ready for testing</p>
 
-<p>Example: Given we are completing the iapt-leeds eform v7</p>
-
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Example: </span>
+<span class="nf">Given </span>we are completing the iapt-leeds eform v7
+</code></pre></div></div>
 <h2 id="standard-actions">Standard Actions</h2>
 <p>These are the commands you will use most often
-<strong>When we set ‘field-name’ to ‘new-value’</strong></p>
+When we set ‘field-name’ to ‘new-value’</p>
 
 <p>Will set the specified field to the new value. The way that we use this can vary between fields:</p>
 
@@ -238,42 +249,49 @@ Loads the specified form into the browser ready for testing</p>
   <li>Checkbox lists: The option(s) matching the new value(s) are selected. You can seperate multiple values with commas like <code class="language-plaintext highlighter-rouge">json WHEN we set 'mylist' to 'option1, option2'</code> An error is thrown if no option matches a new value; To un-select all options set the value to ‘’.</li>
 </ul>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">When</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">set</span><span class="w"> </span><span class="err">field</span><span class="w"> </span><span class="err">values</span><span class="w">
-</span><span class="err">|</span><span class="w"> </span><span class="err">field-name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">new-value</span><span class="w"> </span><span class="err">|</span><span class="w">
-</span><span class="err">|</span><span class="w"> </span><span class="err">field-name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">new-value</span><span class="w"> </span><span class="err">|</span><span class="w">
-</span><span class="err">Sets</span><span class="w"> </span><span class="err">fields</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">values.</span><span class="w"> </span><span class="err">Behaves</span><span class="w"> </span><span class="err">just</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">'WHEN</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">set</span><span class="w"> </span><span class="err">'x'</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">'y''</span><span class="w"> </span><span class="err">but</span><span class="w"> </span><span class="err">easier</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">read</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">lots</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">fields.</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we set field values
+<span class="p">|</span> <span class="nv">field-name</span> <span class="p">|</span> <span class="nv">new-value</span> <span class="p">|</span>
+<span class="p">|</span> <span class="n">field-name</span> <span class="p">|</span> <span class="n">new-value</span> <span class="p">|</span>
+</code></pre></div></div>
+<p>Sets fields to values. Behaves just like ‘WHEN we set ‘x’ to ‘y’’ but easier to read when you have lots of fields.</p>
 
-<p><strong>When we set ‘field-name’ to anything</strong></p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we set 'field-name' to anything
+</code></pre></div></div>
 
 <p>Sets the specified field to a random value. This is useful when a field requires a value but the value will not affect the outcome of the test, this makes clear which values you care about and which you just need completing.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">When</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">set</span><span class="w"> </span><span class="err">fields</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">anything</span><span class="w">
-</span><span class="err">|</span><span class="w"> </span><span class="err">field-name</span><span class="w"> </span><span class="err">|</span><span class="w">
-</span><span class="err">|</span><span class="w"> </span><span class="err">field-name</span><span class="w"> </span><span class="err">|</span><span class="w">
-</span><span class="err">Sets</span><span class="w"> </span><span class="err">fields</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">random</span><span class="w"> </span><span class="err">values.</span><span class="w"> </span><span class="err">Behaves</span><span class="w"> </span><span class="err">just</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">'WHEN</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">set</span><span class="w"> </span><span class="err">'x'</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">anything'</span><span class="w"> </span><span class="err">but</span><span class="w"> </span><span class="err">easier</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">read</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">lots</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">fields.</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we set fields to anything
+<span class="p">|</span> <span class="nv">field-name</span> <span class="p">|</span>
+<span class="p">|</span> <span class="n">field-name</span> <span class="p">|</span>
+</code></pre></div></div>
+<p>Sets fields to random values. Behaves just like ‘WHEN we set ‘x’ to anything’ but easier to read when you have lots of fields.</p>
 
-<p><strong>When we do not provide a value to ‘field-name’</strong>
-Clears the specified field.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nf">When </span>we do not provide a value to 'field-name'
+</code></pre></div></div>
+<p>Clears the specified field.</p>
 
-<p><strong>When we move to the next page of the form</strong>
-Moves to the next page of the form.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we move to the next page of the form
+</code></pre></div></div>
+<p>Moves to the next page of the form.</p>
 
-<p><strong>When we submit the form</strong>
-Submits the final page of a form.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we submit the form
+</code></pre></div></div>
+<p>Submits the final page of a form.</p>
 
 <h2 id="assertions">Assertions</h2>
 <p>Once you have interacted with a form, you will want to verify it has reacted as expected.</p>
 
-<p><strong>Then the form submits successfully</strong>
-Checks that no issues were found when the form submits.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>the form submits successfully
+</code></pre></div></div>
+<p>Checks that no issues were found when the form submits.</p>
 
-<p><strong>Then page page-name is shown</strong>
-Checks that the specified page is on-screen.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>page page-name is shown
+</code></pre></div></div>
+<p>Checks that the specified page is on-screen.</p>
 
-<p><strong>Then ‘field-name’ shows ‘expected-value’</strong>
-Checks that the specified value is shown in a field. The way that we use this can vary between fields:</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' shows 'expected-value'
+</code></pre></div></div>
+<p>Checks that the specified value is shown in a field. The way that we use this can vary between fields:</p>
 
 <ul>
   <li>Textboxes/Freeform Inputs: The value is checked against the contents of the input;</li>
@@ -281,72 +299,117 @@ Checks that the specified value is shown in a field. The way that we use this ca
   <li>Checkbox lists: the value is checked against all the selected checkboxes, in order. Seperate items with a comma: ``THEN ‘MyField’ shows ‘Option1, Option3’.</li>
 </ul>
 
-<p><strong>Then ‘field-name’ is greater than ‘expected-value’</strong>
-Checks that the value in the field is greater than the expected value</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' is greater than 'expected-value'
+</code></pre></div></div>
+<p>Checks that the value in the field is greater than the expected value</p>
 
-<p><strong>Then ‘field-name’ is empty</strong>
-Checks that the specified field does not have a value</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' is empty
+</code></pre></div></div>
+<p>Checks that the specified field does not have a value</p>
 
-<p><strong>Then ‘field-name’ is not empty</strong>
-Checks that the specified field does have a value</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' is not empty
+</code></pre></div></div>
+<p>Checks that the specified field does have a value</p>
 
-<p><strong>Then ‘field-name’ does not have a validation message</strong>
-Checks that the specified field does not have a validation error visible.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' does not have a validation message
+</code></pre></div></div>
+<p>Checks that the specified field does not have a validation error visible.</p>
 
-<p><strong>Then ‘field-name’ has a validation message</strong>
-<strong>Then ‘field-name’ has a validation message ‘expected message’</strong>
-Checks that the specified field has a validation error visible. If specified, the message will be checked against the expected mesage.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' has a validation message
+<span class="nf">Then </span>'field-name' has a validation message 'expected message'
+</code></pre></div></div>
+<p>Checks that the specified field has a validation error visible. If specified, the message will be checked against the expected mesage.</p>
 
-<p><strong>Then ‘field-name’ is visible</strong>
-<strong>Then ‘field-name’ is not visible</strong>
-Checks that the specified field is or is not shown on the page.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' is visible
+<span class="nf">Then </span>'field-name' is not visible
+</code></pre></div></div>
+<p>Checks that the specified field is or is not shown on the page.</p>
 
-<p><strong>Then the ‘section-name’ form section is visible</strong>
-<strong>Then the ‘section-name’ form section is not visible</strong>
-Checks that the specified form section is or is not visible</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>the 'section-name' form section is visible
+<span class="nf">Then </span>the 'section-name' form section is not visible
+</code></pre></div></div>
+<p>Checks that the specified form section is or is not visible</p>
 
-<p><strong>Then ‘field-name’ is enabled</strong>
-<strong>Then ‘field-name’ is disabled</strong>
-Checks that the specified field is enabled or not</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' is enabled
+<span class="nf">Then </span>'field-name' is disabled
+</code></pre></div></div>
+<p>Checks that the specified field is enabled or not</p>
 
-<p><strong>Then ‘field-name’ has an ‘Other’ input visible</strong>
-<strong>Then ‘field-name’ does not have an ‘Other’ input visible</strong>
-Certain fields, such as drop-down selects or similar may have the option for an ‘Other’ textbox, this asserts that this is or is not shown
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' has an 'Other' input visible
+<span class="nf">Then </span>'field-name' does not have an 'Other' input visible
+</code></pre></div></div>
+<p>Certain fields, such as drop-down selects or similar may have the option for an ‘Other’ textbox, this asserts that this is or is not shown
 <img src="/assets/img/AireForm-commands/aireform-commands-1.png" alt="aireform-commands" /></p>
 
-<p><strong>Then a validation error shows</strong>
-<strong>Then a validation error shows ‘expected message’</strong>
-Checks that a validation message is shown in the popup at the bottom of the screen. If specified the expected message is checked, if not only the appearance of the popup is validated.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>a validation error shows
+<span class="nf">Then </span>a validation error shows 'expected message'
+</code></pre></div></div>
+<p>Checks that a validation message is shown in the popup at the bottom of the screen. If specified the expected message is checked, if not only the appearance of the popup is validated.</p>
 
 <h2 id="controls-with-other-options">Controls with ‘Other’ options</h2>
 <p>Sometimes a dropdown list or a radio button list can have an ‘Other’ option which then allows freeform input into a textbox. You can interact with this with the following:</p>
 
-<p><strong>When we set the ‘Other’ input of ‘field-name’ to ‘new-value’</strong>
-If the other textbox is visible it will be filled in, if not an error will be thrown.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we set the 'Other' input of 'field-name' to 'new-value'
+</code></pre></div></div>
+<p>If the other textbox is visible it will be filled in, if not an error will be thrown.</p>
 
-<p><strong>Then ‘field-name’ has an ‘Other’ input visible</strong>
-Checks that the specified field has its Other textbox visible.</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' has an 'Other' input visible
+</code></pre></div></div>
 
-<p><strong>Then the ‘Other’ input of ‘field-name’ shows ‘expected-value’</strong>
-Checks that the contents of the field’s Other textbox matches the expected value. If the Other textbox is not visible the value is considered to be an empty string.</p>
+<p>Checks that the specified field has its Other textbox visible.</p>
 
-<h2 id="working-with-repeaters">Working with Repeaters</h2>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>the 'Other' input of 'field-name' shows 'expected-value'
+</code></pre></div></div>
+
+<p>Checks that the contents of the field’s Other textbox matches the expected value. If the Other textbox is not visible the value is considered to be an empty string.</p>
+
+<h2 id="working-with-repeaters">Working with repeaters</h2>
 <p>Things can be slightly more complex when working with repeaters, where you will have to specify the row that you want to look within when using assertions.</p>
 
-<p><strong>When we set ‘field-name’ in row row-no of ‘repeater-name’ to ‘new-value’</strong>
-This will set the new value into the specified field of the repeater. The row number is 1-based</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we set 'field-name' in row row-no of 'repeater-name' to 'new-value'
+</code></pre></div></div>
 
-<p><strong>When we add a new row to ‘repeater-name’</strong>
-Clicks the add new row button of the specified repeater. You must do this before interacting with the new row!</p>
+<p>This will set the new value into the specified field of the repeater. The row number is 1-based</p>
 
-<p><strong>Then ‘field-name’ in row row-no of ‘repeater-name’ shows ‘expected-value’</strong>
-Checks that the field in the specified row of the repeater matches the expected value</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we add a new row to 'repeater-name'
+</code></pre></div></div>
 
-<p><strong>Then ‘field-name’ is visible in row row-no of ‘repeater-name’</strong>
-Checks that the field in the specified row of the repeater is visible</p>
+<p>Clicks the add new row button of the specified repeater. You must do this before interacting with the new row!</p>
 
-<p><strong>Then ‘repeater-name’ has (\d+) repetitions</strong>
-Checks that the repeater has the correct number of repetitions (rows).</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' in row row-no of 'repeater-name' shows 'expected-value'
+</code></pre></div></div>
+
+<p>Checks that the field in the specified row of the repeater matches the expected value</p>
+
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'field-name' is visible in row row-no of 'repeater-name'
+</code></pre></div></div>
+
+<p>Checks that the field in the specified row of the repeater is visible</p>
+
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'repeater-name' has (\d+) repetitions
+</code></pre></div></div>
+<p>Checks that the repeater has the correct number of repetitions (rows).</p>
+
+<h2 id="working-with-dates">Working with dates</h2>
+<p>We provide a number of commands that allow you to set date controls dynamically:</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">When </span>we set 'date' to today
+<span class="nf">When </span>we set 'date' to tomorrow
+<span class="nf">When </span>we set 'date' to yesterday
+<span class="nf">When </span>we set 'date' to 2 months from today
+<span class="nf">When </span>we set 'date' to 1 month ago
+<span class="nf">When </span>we set 'date' to 5 days from today
+<span class="nf">When </span>we set 'date' to 5 days ago
+</code></pre></div></div>
+
+<p>You can also assert dates dynamically:</p>
+<div class="language-cucumber highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Then </span>'date' is equal to today
+<span class="nf">Then </span>'date' is equal to tomorrow
+<span class="nf">Then </span>'date' is equal to yesterday
+<span class="nf">Then </span>'date' is equal to 2 months from today
+<span class="nf">Then </span>'date' is equal to 1 month ago
+<span class="nf">Then </span>'date' is equal to 5 days from today
+<span class="nf">Then </span>'date' is equal to 5 days ago
+</code></pre></div></div>
 
                         <div class="share uk-text-center">
     <a href="https://twitter.com/intent/tweet?text=AireForm commands&url=https://docs.aireassert.com/docs/command-library/aireform-commands/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
@@ -397,6 +460,15 @@ Checks that the repeater has the correct number of repetitions (rows).</p>
     
 
     <ul class="uk-list">
+    
+
+    
+    
+
+    
+
+    
+
     
 
     
@@ -579,9 +651,18 @@ Checks that the repeater has the correct number of repetitions (rows).</p>
           
           <li class=""><a href="/docs/command-library/aireflow-commands/">AireFlow commands</a></li>
         
+        </ul>
+        
+        <h5 class="uk-margin-top">Advanced Topics</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
           
           
-          <li class=""><a href="/docs/command-library/tips-gherkin-testing/">Tips for Gherkin Testing in AireAssert</a></li>
+          <li class=""><a href="/docs/advanced-topics/rules-and-logic/">Rules and logic</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
         
         </ul>
         

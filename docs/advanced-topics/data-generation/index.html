@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>RunConfiguration | AireAssert Docs</title>
+<title>Data generation | AireAssert Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="RunConfiguration" />
-<meta name="author" content="Rhianna Thwaite" />
+<meta property="og:title" content="Data generation" />
+<meta name="author" content="Mark Schofield" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A testset may define a collection of Run Configurations. These are sets of configuration that work well together, that you wish to be able to switch between easily." />
-<meta property="og:description" content="A testset may define a collection of Run Configurations. These are sets of configuration that work well together, that you wish to be able to switch between easily." />
-<link rel="canonical" href="https://docs.aireassert.com/docs/testset-config/testset-config-run/" />
-<meta property="og:url" content="https://docs.aireassert.com/docs/testset-config/testset-config-run/" />
+<meta name="description" content="Generating data for form commands AireAssert allows you to generate data when setting values for form controls." />
+<meta property="og:description" content="Generating data for form commands AireAssert allows you to generate data when setting values for form controls." />
+<link rel="canonical" href="https://docs.aireassert.com/docs/advanced-topics/data-generation/" />
+<meta property="og:url" content="https://docs.aireassert.com/docs/advanced-topics/data-generation/" />
 <meta property="og:site_name" content="AireAssert Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-07-25T15:41:11+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="RunConfiguration" />
+<meta property="twitter:title" content="Data generation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rhianna Thwaite"},"dateModified":"2023-07-25T15:41:11+00:00","datePublished":"2023-07-25T15:41:11+00:00","description":"A testset may define a collection of Run Configurations. These are sets of configuration that work well together, that you wish to be able to switch between easily.","headline":"RunConfiguration","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/testset-config/testset-config-run/"},"url":"https://docs.aireassert.com/docs/testset-config/testset-config-run/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Mark Schofield"},"dateModified":"2023-07-25T15:41:11+00:00","datePublished":"2023-07-25T15:41:11+00:00","description":"Generating data for form commands AireAssert allows you to generate data when setting values for form controls.","headline":"Data generation","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireassert.com/docs/advanced-topics/data-generation/"},"url":"https://docs.aireassert.com/docs/advanced-topics/data-generation/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireassert.com/assets/posts/"/>
@@ -182,7 +182,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
+                      <li class="uk-active"><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
                     
                     </ul>
                     
@@ -199,7 +199,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
+                      <li class=""><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
                     
                     </ul>
                     
@@ -210,7 +210,7 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">RunConfiguration</h1>
+                    <h1 class="uk-article-title">Data generation</h1>
 
                     
 
@@ -229,39 +229,282 @@
                     </div>
 
                     <div class="article-content">
-                        <p>A testset may define a collection of Run Configurations. These are sets of configuration that work well together, that you wish to be able to switch between easily.</p>
+                        <h3 id="generating-data-for-form-commands">Generating data for form commands</h3>
+<p>AireAssert allows you to generate data when setting values for form controls.</p>
 
-<h2 id="show-me">Show me</h2>
-<p>In the root of your TestSet, next to the Configuration.json file create a new file RunConfiguration.json:</p>
+<h4 id="names">Names</h4>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"ActiveConfiguration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RunConfigurations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"BrowserResolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400x400"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"BrowserResolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000x300"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+<table class="styled">
+  <thead>
+    <tr>
+      <th style="text-align: left">Syntax</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: right">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">{Generate:name:findName:en_GB}</td>
+      <td style="text-align: left">Generates a full name</td>
+      <td style="text-align: right">Kevin Sporer</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:name:firstName:en_GB}</td>
+      <td style="text-align: left">Returns a first name</td>
+      <td style="text-align: right">Kevin</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:name:lastName:en_GB}</td>
+      <td style="text-align: left">Returns a last name</td>
+      <td style="text-align: right">Sporer</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:name:gender:en_GB}</td>
+      <td style="text-align: left">Return a gender</td>
+      <td style="text-align: right">Male, Female</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:name:jobArea:en_GB}</td>
+      <td style="text-align: left">Generates a job area</td>
+      <td style="text-align: right">Infrastructure</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:name:jobDescriptor:en_GB}</td>
+      <td style="text-align: left">Generates a job descriptor</td>
+      <td style="text-align: right">Customer</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:name:jobTitle:en_GB}</td>
+      <td style="text-align: left">Generates a job title</td>
+      <td style="text-align: right">Global Accounts Engineer</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:name:jobType:en_GB}</td>
+      <td style="text-align: left">Generates a job type</td>
+      <td style="text-align: right">Designer</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:name:prefix:en_GB}</td>
+      <td style="text-align: left">Returns a name prefix</td>
+      <td style="text-align: right">Mr., Mrs.</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>If you now run your TestSet, you should see that every test runs with a browser resolution of 400 x 400.</p>
+<h4 id="company">Company</h4>
 
-<h2 id="choosing-the-target-configuration">Choosing the target configuration</h2>
-<p>In the example above, we have 2 sets of configuration, so how do we switch between them?</p>
+<table class="styled">
+  <thead>
+    <tr>
+      <th style="text-align: left">Syntax</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: right">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">{Generate:company:companyName:en_GB}</td>
+      <td style="text-align: left">Generates a company name.</td>
+      <td style="text-align: right">Zieme, Hauck and McClure</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:company:companySuffix:en_GB}</td>
+      <td style="text-align: left">Generates a company suffix.</td>
+      <td style="text-align: right">LLC, and Sons</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>We can set the default configuration by changing the ActiveConfiguration value in the RunConfiguration.json file:</p>
+<h4 id="lorem">Lorem</h4>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"ActiveConfiguration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Second"</span><span class="w">
-</span></code></pre></div></div>
+<table class="styled">
+  <thead>
+    <tr>
+      <th style="text-align: left">Syntax</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: right">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">{Generate:lorem:sentences}</td>
+      <td style="text-align: left">Generates sentences</td>
+      <td style="text-align: right">Deserunt porro nulla id vero perspiciatis nulla.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:lorem:slug}</td>
+      <td style="text-align: left">Generates slugified text</td>
+      <td style="text-align: right">unde-deserunt-porro</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:lorem:word}</td>
+      <td style="text-align: left">Generates a word</td>
+      <td style="text-align: right">temporibus</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="random">Random</h4>
+
+<table class="styled">
+  <thead>
+    <tr>
+      <th style="text-align: left">Syntax</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: right">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">{Generate:random:word}</td>
+      <td style="text-align: left">Returns random word</td>
+      <td style="text-align: right">Seamless</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="internet">Internet</h4>
+
+<table class="styled">
+  <thead>
+    <tr>
+      <th style="text-align: left">Syntax</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: right">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">{Generate:internet:color}</td>
+      <td style="text-align: left">Generates a random css hex color code</td>
+      <td style="text-align: right">#464c5b</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:domainName}</td>
+      <td style="text-align: left">Generates a domain name</td>
+      <td style="text-align: right">muddy-neuropathologist.net</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:domainSuffix}</td>
+      <td style="text-align: left">Generates a domain name</td>
+      <td style="text-align: right">com</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:domainWord}</td>
+      <td style="text-align: left">Generates a domain word</td>
+      <td style="text-align: right">close-reality</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:email}</td>
+      <td style="text-align: left">Generates a random email</td>
+      <td style="text-align: right">Larry_Ratke85@yahoo.com</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:emoji}</td>
+      <td style="text-align: left">Generates a random emoji</td>
+      <td style="text-align: right">🥰</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:httpMethod}</td>
+      <td style="text-align: left">Generates a http method</td>
+      <td style="text-align: right">DELETE</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:ip}</td>
+      <td style="text-align: left">Generates a random IPv4 address</td>
+      <td style="text-align: right">140.151.183.216</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:ipv6}</td>
+      <td style="text-align: left">Generates a random IPv6 address</td>
+      <td style="text-align: right">269f:1230:73e3:318d:842b:daab:326d:897b</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:password}</td>
+      <td style="text-align: left">Generates a random password</td>
+      <td style="text-align: right">UYdqZrTqIEJuENl</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:url}</td>
+      <td style="text-align: left">Generates a random url</td>
+      <td style="text-align: right">https://remarkable-hackwork.info</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:internet:userName}</td>
+      <td style="text-align: left">Generates a random username</td>
+      <td style="text-align: right">Katelynn_Medhurst60</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="finance">Finance</h4>
+
+<table class="styled">
+  <thead>
+    <tr>
+      <th style="text-align: left">Syntax</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: right">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">{Generate:finance:account}</td>
+      <td style="text-align: left">Generates a random account number</td>
+      <td style="text-align: right">55786858</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:finance:accountName}</td>
+      <td style="text-align: left">Generates a random account name</td>
+      <td style="text-align: right">Home Loan Account</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:finance:amount}</td>
+      <td style="text-align: left">Generates a random amount</td>
+      <td style="text-align: right">548.81</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:finance:bic}</td>
+      <td style="text-align: left">Generates a random bic</td>
+      <td style="text-align: right">PSVOTDO1</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:finance:creditCardCVV}</td>
+      <td style="text-align: left">Generates a credit card CVV</td>
+      <td style="text-align: right">537</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:finance:creditCardIssuer}</td>
+      <td style="text-align: left">Generates a credit card issuer</td>
+      <td style="text-align: right">maestro</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:finance:creditCardNumber}</td>
+      <td style="text-align: left">Generates a credit card number</td>
+      <td style="text-align: right">5020868584663428091</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:finance:currencyCode}</td>
+      <td style="text-align: left">Generates a currency code</td>
+      <td style="text-align: right">MUR</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:finance:currencyName}</td>
+      <td style="text-align: left">Generates a currency name</td>
+      <td style="text-align: right">US Dollar</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">{Generate:finance:iban}</td>
+      <td style="text-align: left">Generates a random iban</td>
+      <td style="text-align: right">TR736918640040966092800056</td>
+    </tr>
+  </tbody>
+</table>
+
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=RunConfiguration&url=https://docs.aireassert.com/docs/testset-config/testset-config-run/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireassert.com%2Fdocs%2Ftestset-config%2Ftestset-config-run%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Data generation&url=https://docs.aireassert.com/docs/advanced-topics/data-generation/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireassert.com%2Fdocs%2Fadvanced-topics%2Fdata-generation%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -297,23 +540,16 @@
 
   
   
-
-  
-  
-
-  
-  
-
-  
-  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/testset-config/testset-config-browser/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/advanced-topics/rules-and-logic/">&larr; Previous</a></li>
           
           
-
+            
+            
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/testset-config/testset-config-resolution/">Next &rarr;</a></li>
           
     </ul>
     
@@ -529,7 +765,7 @@
         
           
           
-          <li class=""><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
+          <li class="uk-active"><a href="/docs/advanced-topics/data-generation/">Data generation</a></li>
         
         </ul>
         
@@ -546,7 +782,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
+          <li class=""><a href="/docs/testset-config/testset-config-run/">RunConfiguration</a></li>
         
         </ul>
         
